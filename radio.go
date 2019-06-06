@@ -108,7 +108,9 @@ func (c *Radio) ProcessEvent(event Event) bool {
 		return false
 	}
 
-	if (event.Type == EventKey && event.Key == term.KeySpace) || event.Type == EventClick {
+	if (event.Type == EventKey && event.Key == term.KeySpace) ||
+		(event.Type == EventKey && event.Key == term.KeyEnter) ||
+		event.Type == EventClick {
 		if c.group == nil {
 			c.SetSelected(true)
 		} else {
