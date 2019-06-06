@@ -265,7 +265,7 @@ func (c *Window) ProcessEvent(ev Event) bool {
 		}
 		return true
 	case EventKey:
-		if ev.Key == term.KeyTab || ev.Key == term.KeyArrowUp || ev.Key == term.KeyArrowDown {
+		if ev.Key == term.KeyArrowUp || ev.Key == term.KeyArrowDown {
 			if SendEventToChild(c, ev) {
 				return true
 			}
